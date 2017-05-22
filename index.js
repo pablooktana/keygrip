@@ -1,5 +1,5 @@
 var crypto = require("crypto")
-  
+
 function Keygrip(keys, algorithm, encoding) {
   if (!algorithm) algorithm = "sha1";
   if (!encoding) encoding = "base64";
@@ -39,6 +39,7 @@ Keygrip.sign = Keygrip.verify = Keygrip.index = function() {
 
 //http://codahale.com/a-lesson-in-timing-attacks/
 var constantTimeCompare = function(val1, val2){
+  console.log('Keygrip.constantTimeCompare', val1, val2)
     if(val1 == null && val2 != null){
         return false;
     } else if(val2 == null && val1 != null){
