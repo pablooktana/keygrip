@@ -25,6 +25,7 @@ function Keygrip(keys, algorithm, encoding) {
   }
 
   this.index = function(data, digest) {
+    console.log('Keygrip.index keys', keys);
     for (var i = 0, l = keys.length; i < l; i++) {
       if (constantTimeCompare(digest, sign(data, keys[i]))) return i
     }
